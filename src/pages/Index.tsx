@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from 'react';
 import { Play, Pause, RotateCcw } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
+import { playNotificationSound } from '@/utils/audioUtils';
 
 type TimerState = 'idle' | 'working' | 'breaking';
 
@@ -61,7 +62,8 @@ const Index = () => {
         } else if (state === 'breaking') {
           setBreakTime(prev => {
             if (prev <= 1) {
-              // Break finished
+              // Break finished - play sound notification
+              playNotificationSound();
               setIsRunning(false);
               setState('idle');
               return 0;
