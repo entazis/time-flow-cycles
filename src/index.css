@@ -1,109 +1,124 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Serif:wght@300;400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-/* Zen-inspired design system. All colors, gradients, fonts, etc defined here. 
+/* Modern, beautiful design system with vibrant colors and smooth gradients. 
 All colors MUST be HSL.
 */
 
 @layer base {
   :root {
-    --background: 48 20% 97%; /* warm cream */
-    --foreground: 30 15% 20%; /* deep earth */
+    --background: 0 0% 100%;
+    --foreground: 222 84% 5%;
 
     --card: 0 0% 100%;
-    --card-foreground: 30 15% 20%;
+    --card-foreground: 222 84% 5%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 30 15% 20%;
+    --popover-foreground: 222 84% 5%;
 
-    --primary: 25 15% 35%; /* sage brown */
-    --primary-foreground: 48 20% 97%;
+    --primary: 221 83% 53%; /* vibrant blue */
+    --primary-foreground: 210 40% 98%;
 
-    --secondary: 35 12% 55%; /* soft taupe */
-    --secondary-foreground: 30 15% 20%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 45 25% 94%; /* warm cream */
-    --muted-foreground: 35 12% 55%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
 
-    --accent: 40 10% 70%; /* warm gray */
-    --accent-foreground: 30 15% 20%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
 
-    --destructive: 0 50% 60%; /* muted red */
-    --destructive-foreground: 48 20% 97%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 35 15% 85%; /* soft beige */
-    --input: 35 15% 85%;
-    --ring: 25 15% 35%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 221 83% 53%;
 
     --radius: 0.75rem;
 
-    /* Zen color palette */
-    --sage: 80 20% 50%; /* sage green */
-    --sage-foreground: 48 20% 97%;
-    --stone: 35 12% 55%; /* warm stone */
-    --stone-foreground: 48 20% 97%;
-    --sand: 40 25% 75%; /* warm sand */
-    --sand-foreground: 30 15% 20%;
-    --earth: 25 15% 35%; /* earth brown */
-    --earth-foreground: 48 20% 97%;
+    /* Beautiful modern color palette */
+    --blue: 221 83% 53%; /* vibrant blue */
+    --blue-foreground: 210 40% 98%;
+    --indigo: 239 84% 67%; /* rich indigo */
+    --indigo-foreground: 210 40% 98%;
+    --purple: 262 83% 58%; /* modern purple */
+    --purple-foreground: 210 40% 98%;
+    --emerald: 142 71% 45%; /* fresh emerald */
+    --emerald-foreground: 210 40% 98%;
+    --orange: 25 95% 53%; /* warm orange */
+    --orange-foreground: 210 40% 98%;
+    --pink: 330 81% 60%; /* vibrant pink */
+    --pink-foreground: 210 40% 98%;
+
+    /* Beautiful gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(221 83% 53%), hsl(239 84% 67%));
+    --gradient-warm: linear-gradient(135deg, hsl(25 95% 53%), hsl(330 81% 60%));
+    --gradient-cool: linear-gradient(135deg, hsl(221 83% 53%), hsl(142 71% 45%));
+    --gradient-background: linear-gradient(135deg, hsl(210 40% 98%), hsl(221 83% 97%));
 
     /* Sidebar colors */
-    --sidebar-background: 48 20% 98%;
-    --sidebar-foreground: 30 15% 25%;
-    --sidebar-primary: 25 15% 35%;
-    --sidebar-primary-foreground: 48 20% 98%;
-    --sidebar-accent: 45 20% 95%;
-    --sidebar-accent-foreground: 25 15% 35%;
-    --sidebar-border: 35 15% 90%;
-    --sidebar-ring: 25 15% 35%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5% 26%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 5% 96%;
+    --sidebar-accent-foreground: 240 6% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 221 83% 53%;
   }
 
   .dark {
-    --background: 30 15% 8%; /* deep charcoal */
-    --foreground: 48 20% 95%; /* warm cream */
+    --background: 222 84% 5%;
+    --foreground: 210 40% 98%;
 
-    --card: 30 12% 12%; /* dark stone */
-    --card-foreground: 48 20% 95%;
+    --card: 222 84% 5%;
+    --card-foreground: 210 40% 98%;
 
-    --popover: 30 12% 12%;
-    --popover-foreground: 48 20% 95%;
+    --popover: 222 84% 5%;
+    --popover-foreground: 210 40% 98%;
 
-    --primary: 40 10% 70%; /* warm gray */
-    --primary-foreground: 30 15% 8%;
+    --primary: 221 83% 53%;
+    --primary-foreground: 222 84% 5%;
 
-    --secondary: 30 8% 25%; /* darker stone */
-    --secondary-foreground: 48 20% 95%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
 
-    --muted: 30 8% 25%;
-    --muted-foreground: 40 10% 70%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
 
-    --accent: 25 15% 35%; /* earth brown */
-    --accent-foreground: 48 20% 95%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
 
-    --destructive: 0 50% 60%;
-    --destructive-foreground: 48 20% 95%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
 
-    --border: 30 8% 25%;
-    --input: 30 8% 25%;
-    --ring: 40 10% 70%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 221 83% 53%;
 
-    /* Dark zen colors */
-    --sage: 80 15% 40%; /* darker sage */
-    --stone: 35 10% 45%; /* darker stone */
-    --sand: 35 12% 55%; /* darker sand */
-    --earth: 30 8% 25%; /* darker earth */
+    /* Dark mode beautiful colors */
+    --blue: 221 83% 53%;
+    --indigo: 239 84% 67%;
+    --purple: 262 83% 58%;
+    --emerald: 142 71% 45%;
+    --orange: 25 95% 53%;
+    --pink: 330 81% 60%;
+
+    /* Dark mode gradients */
+    --gradient-background: linear-gradient(135deg, hsl(222 84% 5%), hsl(217 33% 17%));
 
     /* Dark sidebar colors */
-    --sidebar-background: 30 15% 8%;
-    --sidebar-foreground: 48 15% 90%;
-    --sidebar-primary: 40 10% 70%;
-    --sidebar-primary-foreground: 30 15% 8%;
-    --sidebar-accent: 30 8% 18%;
-    --sidebar-accent-foreground: 48 15% 90%;
-    --sidebar-border: 30 8% 18%;
-    --sidebar-ring: 40 10% 70%;
+    --sidebar-background: 240 6% 10%;
+    --sidebar-foreground: 240 5% 96%;
+    --sidebar-primary: 221 83% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 4% 16%;
+    --sidebar-accent-foreground: 240 5% 96%;
+    --sidebar-border: 240 4% 16%;
+    --sidebar-ring: 221 83% 53%;
   }
 }
 
@@ -113,13 +128,13 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground font-light;
+    @apply bg-background text-foreground font-normal;
     font-family: 'Inter', sans-serif;
-    letter-spacing: 0.02em;
+    letter-spacing: -0.01em;
   }
   
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Noto Serif', serif;
-    @apply font-light tracking-wide;
+    font-family: 'Space Grotesk', sans-serif;
+    @apply font-medium tracking-tight;
   }
 }

@@ -20,7 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: ['Inter', 'system-ui', 'sans-serif'],
-				serif: ['Noto Serif', 'serif'],
+				display: ['Space Grotesk', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,23 +66,29 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				sage: {
-					'500': 'hsl(var(--sage))',
-					'600': 'hsl(80 20% 45%)',
-					foreground: 'hsl(var(--sage-foreground))'
+				blue: {
+					DEFAULT: 'hsl(var(--blue))',
+					foreground: 'hsl(var(--blue-foreground))'
 				},
-				stone: {
-					'400': 'hsl(35 12% 60%)',
-					'500': 'hsl(var(--stone))',
-					foreground: 'hsl(var(--stone-foreground))'
+				indigo: {
+					DEFAULT: 'hsl(var(--indigo))',
+					foreground: 'hsl(var(--indigo-foreground))'
 				},
-				sand: {
-					DEFAULT: 'hsl(var(--sand))',
-					foreground: 'hsl(var(--sand-foreground))'
+				purple: {
+					DEFAULT: 'hsl(var(--purple))',
+					foreground: 'hsl(var(--purple-foreground))'
 				},
-				earth: {
-					DEFAULT: 'hsl(var(--earth))',
-					foreground: 'hsl(var(--earth-foreground))'
+				emerald: {
+					DEFAULT: 'hsl(var(--emerald))',
+					foreground: 'hsl(var(--emerald-foreground))'
+				},
+				orange: {
+					DEFAULT: 'hsl(var(--orange))',
+					foreground: 'hsl(var(--orange-foreground))'
+				},
+				pink: {
+					DEFAULT: 'hsl(var(--pink))',
+					foreground: 'hsl(var(--pink-foreground))'
 				}
 			},
 			borderRadius: {
