@@ -88,11 +88,11 @@ const Index = () => {
   const getStateColor = () => {
     switch (state) {
       case 'working':
-        return 'from-blue-500 to-indigo-600';
+        return 'from-sage-500 to-sage-600';
       case 'breaking':
-        return 'from-orange-400 to-red-500';
+        return 'from-amber-400 to-orange-400';
       default:
-        return 'from-gray-400 to-gray-600';
+        return 'from-stone-400 to-stone-500';
     }
   };
 
@@ -117,40 +117,40 @@ const Index = () => {
   const displayTime = state === 'working' ? workTime : (state === 'breaking' ? breakTime : 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 dark:from-gray-900 dark:to-gray-800 flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-background via-muted to-background flex items-center justify-center p-4">
       <div className="w-full max-w-md space-y-8">
         {/* Header with Theme Toggle */}
-        <div className="text-center space-y-2 relative">
+        <div className="text-center space-y-3 relative">
           <div className="absolute top-0 right-0">
             <ThemeToggle />
           </div>
-          <h1 className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-indigo-600 bg-clip-text text-transparent">
+          <h1 className="text-4xl font-serif font-light bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent tracking-wide">
             Flowmodoro
           </h1>
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
+          <p className="text-muted-foreground text-sm font-light tracking-wide">
             Work with your natural flow, break proportionally
           </p>
         </div>
 
         {/* Main Timer Card */}
-        <Card className="p-8 text-center space-y-6 shadow-2xl border-0 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm">
+        <Card className="p-8 text-center space-y-8 shadow-lg border-0 bg-card/90 backdrop-blur-sm rounded-2xl">
           {/* State Indicator */}
-          <div className={`inline-flex items-center px-4 py-2 rounded-full text-white text-sm font-medium bg-gradient-to-r ${getStateColor()} shadow-lg`}>
+          <div className={`inline-flex items-center px-6 py-3 rounded-full text-white text-sm font-light bg-gradient-to-r ${getStateColor()} shadow-md`}>
             {getStateText()}
           </div>
 
           {/* Timer Display */}
-          <div className="space-y-4">
-            <div className={`text-6xl font-mono font-bold transition-colors duration-500 ${
-              state === 'working' ? 'text-blue-600 dark:text-blue-400' : 
-              state === 'breaking' ? 'text-orange-500 dark:text-orange-400' : 
-              'text-gray-600 dark:text-gray-400'
+          <div className="space-y-6">
+            <div className={`text-7xl font-serif font-light transition-colors duration-700 ${
+              state === 'working' ? 'text-sage-500 dark:text-sage-500' : 
+              state === 'breaking' ? 'text-amber-500 dark:text-amber-400' : 
+              'text-muted-foreground'
             }`}>
               {formatTime(displayTime)}
             </div>
             
             {state === 'working' && workTime > 0 && (
-              <div className="text-sm text-gray-500 dark:text-gray-400">
+              <div className="text-sm text-muted-foreground font-light">
                 Break will be: {formatTime(Math.max(Math.floor(workTime / 5), 60))}
               </div>
             )}
@@ -162,10 +162,10 @@ const Index = () => {
               onClick={startTimer}
               disabled={state === 'breaking' && breakTime === 0}
               size="lg"
-              className={`px-8 py-4 text-lg font-semibold transition-all duration-300 transform hover:scale-105 ${
-                state === 'working' ? 'bg-blue-600 hover:bg-blue-700' :
-                state === 'breaking' ? 'bg-orange-500 hover:bg-orange-600' :
-                'bg-green-600 hover:bg-green-700'
+              className={`px-8 py-4 text-lg font-light tracking-wide transition-all duration-500 transform hover:scale-105 rounded-xl ${
+                state === 'working' ? 'bg-sage-500 hover:bg-sage-600 text-white' :
+                state === 'breaking' ? 'bg-amber-500 hover:bg-amber-600 text-white' :
+                'bg-primary hover:bg-primary/80 text-primary-foreground'
               }`}
             >
               {isRunning && (state === 'working' || state === 'breaking') ? (
@@ -181,7 +181,7 @@ const Index = () => {
                 onClick={resetTimer}
                 variant="outline"
                 size="lg"
-                className="px-6 py-4 transition-all duration-300 transform hover:scale-105"
+                className="px-6 py-4 transition-all duration-500 transform hover:scale-105 rounded-xl border-muted-foreground/20 hover:border-muted-foreground/40"
               >
                 <RotateCcw className="w-5 h-5" />
               </Button>
@@ -190,19 +190,19 @@ const Index = () => {
         </Card>
 
         {/* Info Section */}
-        <div className="text-center space-y-4 text-sm text-gray-600 dark:text-gray-400">
+        <div className="text-center space-y-6 text-sm text-muted-foreground">
           <div className="grid grid-cols-2 gap-4">
-            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
-              <div className="font-semibold text-blue-600 dark:text-blue-400">Work Flow</div>
-              <div>Focus until natural fade</div>
+            <div className="p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border/50">
+              <div className="font-medium text-sage-500 dark:text-sage-500 mb-2 font-serif">Work Flow</div>
+              <div className="font-light">Focus until natural fade</div>
             </div>
-            <div className="p-4 rounded-lg bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm">
-              <div className="font-semibold text-orange-500 dark:text-orange-400">Smart Break</div>
-              <div>Work time ÷ 5</div>
+            <div className="p-6 rounded-2xl bg-card/60 backdrop-blur-sm border border-border/50">
+              <div className="font-medium text-amber-500 dark:text-amber-400 mb-2 font-serif">Smart Break</div>
+              <div className="font-light">Work time ÷ 5</div>
             </div>
           </div>
           
-          <p className="text-xs opacity-75">
+          <p className="text-xs opacity-75 font-light leading-relaxed max-w-sm mx-auto">
             Work as long as you can focus, then take a proportional break. 
             This technique adapts to your natural rhythm for deeper productivity.
           </p>

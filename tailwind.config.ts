@@ -18,6 +18,10 @@ export default {
 			}
 		},
 		extend: {
+			fontFamily: {
+				sans: ['Inter', 'system-ui', 'sans-serif'],
+				serif: ['Noto Serif', 'serif'],
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -61,6 +65,24 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				sage: {
+					'500': 'hsl(var(--sage))',
+					'600': 'hsl(80 20% 45%)',
+					foreground: 'hsl(var(--sage-foreground))'
+				},
+				stone: {
+					'400': 'hsl(35 12% 60%)',
+					'500': 'hsl(var(--stone))',
+					foreground: 'hsl(var(--stone-foreground))'
+				},
+				sand: {
+					DEFAULT: 'hsl(var(--sand))',
+					foreground: 'hsl(var(--sand-foreground))'
+				},
+				earth: {
+					DEFAULT: 'hsl(var(--earth))',
+					foreground: 'hsl(var(--earth-foreground))'
 				}
 			},
 			borderRadius: {
